@@ -2,7 +2,7 @@ import React from 'react'
 import ServicesHero from '../components/ServicesHero'
 import ServicesDetail from '../components/ServicesDetail'
 import ServicesPricing from '../components/ServicesPricing'
-import ServicesFAQ from '../components/ServicesFaq'
+import ServicesFAQ from '../components/ServicesFAQ'
 import ServicesCTA from '../components/ServicesCTA'
 import Footer from '../components/Footer'
 
