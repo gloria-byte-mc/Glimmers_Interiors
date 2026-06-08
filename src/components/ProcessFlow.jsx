@@ -26,7 +26,7 @@ const STEPS = [
   {
     number: '03',
     total: '05',
-    title: '3D designs & renders (paid)',
+    title: '3D Designs & Renders',
     description:
       'We refine every element, curating furnishings, lighting, and finishes with quiet precision shaping a space that feels balanced and complete.',
     image:
@@ -56,13 +56,18 @@ const ProcessFlow = () => {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
 
-  const goToNext = () => {
-    if (animating) return;
+  const goTo = (idx) => {
+    if (animating || idx === current) return;
     setAnimating(true);
     setTimeout(() => {
-      setCurrent((prev) => (prev + 1) % STEPS.length);
+      setCurrent(idx);
       setAnimating(false);
     }, 400);
+  };
+
+  const goToNext = () => {
+    const next = (current + 1) % STEPS.length;
+    goTo(next);
   };
 
   const step = STEPS[current];
@@ -82,6 +87,31 @@ const ProcessFlow = () => {
         </h2>
       </div>
 
+      {/* URGENCY BAR */}
+      <p className="processUrgency">
+        Currently accepting Q3 2025 projects
+      </p>
+
+      {/* STEP TRAIL */}
+      <div className="processTrail">
+        {STEPS.map((s, i) => (
+          <React.Fragment key={i}>
+            <div className="processTrailStep">
+              <button
+                className={`processTrailDot ${i === current ? 'active' : i < current ? 'done' : ''}`}
+                onClick={() => goTo(i)}
+              />
+              <span className={`processTrailLabel ${i === current ? 'active' : ''}`}>
+                {s.title}
+              </span>
+            </div>
+            {i < STEPS.length - 1 && (
+              <div className={`processTrailLine ${i < current ? 'done' : ''}`} />
+            )}
+          </React.Fragment>
+        ))}
+      </div>
+
       {/* SIDE LABELS */}
       <span className="processSideLeft">Design in steps</span>
 
@@ -92,23 +122,25 @@ const ProcessFlow = () => {
       {/* CENTER CARD */}
       <div className={`processCard ${animating ? 'exiting' : ''}`}>
 
-        {/* Step counter */}
         <p className="processStep">
           {step.number} / {step.total}
         </p>
 
-        {/* Image */}
         <img
           src={step.image}
           alt={step.title}
           className="processCardImg"
         />
 
-        {/* Title */}
         <h3 className="processCardTitle">{step.title}</h3>
 
-        {/* Description */}
         <p className="processCardDesc">{step.description}</p>
+
+        {current === STEPS.length - 1 && (
+          <a href="/contact" className="processBookCta">
+            Book a Consultation →
+          </a>
+        )}
 
       </div>
 

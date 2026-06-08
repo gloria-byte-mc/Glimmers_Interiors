@@ -14,9 +14,9 @@ const HeroBanner = () => {
       <div className="hero__overlay" />
       <div className="hero__grain" />
 
-      {/* ── Navbar transparent over image ── */}
+      {/* Navbar transparent over image  */}
     
-      {/* ════ CONTENT ════ */}
+      {/* CONTENT  */}
       <div className="hero__content">
 
         {/* ── LEFT: "Transforming" alone ── */}
@@ -26,7 +26,7 @@ const HeroBanner = () => {
           </div>
         </div>
 
-        {/* ── RIGHT COLUMN ── */}
+        {/*  RIGHT COLUMN  */}
         <div className="hero__right">
 
           <div className="hero__line-visions">
@@ -43,14 +43,21 @@ const HeroBanner = () => {
             commercial environments, built with precision and elegance.
           </p>
 
-          <a href="#contact" className="hero__cta">
-            Book a Site Visit
-            <span className="hero__cta-arrow">→</span>
-          </a>
+    <div className="hero__ctaGroup">
+      <a href="#contact" className="hero__cta">
+     Book a Site Visit
+    <span className="hero__cta-arrow">→</span>
+      </a>
+    <a href="/portfolio" className="hero__ctaSecondary">
+    View Our Work
+    </a>
+    </div>
 
         </div>
 
       </div>
+
+
 
     </section>
   );

@@ -9,12 +9,11 @@ const PROJECTS = [
     name: 'Serene Residency',
     description:
       'A contemporary luxury home where warm textures meet refined architecture. Every space crafted to feel both grand and deeply personal.',
-    caption: 'Design concept for a luxury residential interior.',
     imgMain:
       'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
     imgSecondary:
       'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=400&q=80',
-    imgCaption: 'Accent palette: warm ivory, brushed gold, and natural oak.',
+    imgCaption: '5-bedroom residence · 320 sqm · Completed in 14 weeks',
   },
   {
     id: 2,
@@ -23,12 +22,11 @@ const PROJECTS = [
     name: 'Azure Commercial Hub',
     description:
       'A bold commercial space designed to inspire productivity and leave a lasting impression on every visitor who walks through the doors.',
-    caption: 'Design concept for a boutique commercial environment.',
     imgMain:
       'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
     imgSecondary:
       'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=400&q=80',
-    imgCaption: 'Material palette: concrete, glass, and polished steel.',
+    imgCaption: 'Commercial office · 480 sqm · Completed in 10 weeks',
   },
   {
     id: 3,
@@ -37,12 +35,11 @@ const PROJECTS = [
     name: 'The Golden Suite',
     description:
       'An exclusive penthouse interior where luxury meets intimacy. Curated finishes and bespoke furnishings define every corner of this masterpiece.',
-    caption: 'Design concept for a high-end penthouse interior.',
     imgMain:
       'https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?auto=format&fit=crop&w=800&q=80',
     imgSecondary:
       'https://images.unsplash.com/photo-1503174971373-b1f69850bded?auto=format&fit=crop&w=400&q=80',
-    imgCaption: 'Accent palette: champagne gold, cream, and deep walnut.',
+    imgCaption: 'Penthouse · 3 bedrooms · 210 sqm · Completed in 8 weeks',
   },
 ];
 
@@ -100,7 +97,7 @@ const Portfolio = () => {
           className="portfolioImgMain"
         />
 
-        {/* MIDDLE — text and caption pushed to bottom */}
+        {/* MIDDLE — text and link pushed to bottom */}
         <div className="portfolioMiddle">
 
           <div className="portfolioMeta">
@@ -112,14 +109,15 @@ const Portfolio = () => {
           <h3 className="portfolioProjectName">{project.name}</h3>
           <p className="portfolioDesc">{project.description}</p>
 
-          {/* Spacer pushes caption to bottom */}
           <div className="portfolioSpacer" />
 
-          <p className="portfolioCaption">{project.caption}</p>
+          <a href="/contact" className="portfolioSimilarLink">
+            Start a similar project →
+          </a>
 
         </div>
 
-        {/* RIGHT — counter top, image, caption, nav arrows at bottom */}
+        {/* RIGHT — counter top, image, project details, nav arrows at bottom */}
         <div className="portfolioRight">
 
           <p className="portfolioCounterRight">{counter}</p>
@@ -132,10 +130,8 @@ const Portfolio = () => {
 
           <p className="portfolioImgCaption">{project.imgCaption}</p>
 
-          {/* Spacer pushes nav to bottom */}
           <div className="portfolioSpacer" />
 
-          {/* NAV ARROWS — bottom of right column */}
           <div className="portfolioNav">
 
             <button
@@ -153,8 +149,6 @@ const Portfolio = () => {
             >
               ←
             </button>
-
-
 
           </div>
 

@@ -700,9 +700,7 @@
   border-color: var(--gold-light);
 }
 
-/* ════════════════════════════
-   ANIMATIONS
-════════════════════════════ */
+
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(105%); }
   to   { opacity: 1; transform: translateY(0); }
@@ -713,13 +711,11 @@
   to   { opacity: 1; }
 }
 
-/* ════════════════════════════
-   RESPONSIVE
-════════════════════════════ */
+/* Responsiveness */
 @media (max-width: 1280px) {
   .portfolioHeroLineOne span,
   .portfolioHeroLineTwo span { font-size: clamp(3rem, 6vw, 4rem); }
-  .portfolioHeroContent { left: 3rem; right: 3rem; top: 20%; }
+  .portfolioHeroContent { left: 3rem; right: 3rem; top: 40%; }
   .portfolioHeroRight { margin-top: 6rem; }
   .portfolioGrid { padding: 5rem 3rem; }
   .portfolioFeature { padding: 5rem 3rem; gap: 2rem; }

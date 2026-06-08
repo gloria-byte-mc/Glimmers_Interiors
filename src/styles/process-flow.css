@@ -20,6 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   box-sizing: border-box;
 }
 
@@ -42,7 +43,7 @@
   z-index: 1;
 }
 
-/* HEADER — label + heading at top center */
+/* HEADER */
 .processHeader {
   position: absolute;
   top: 3rem;
@@ -77,6 +78,92 @@
 .processHeading em {
   font-style: italic;
   font-weight: 400;
+}
+
+/* URGENCY BAR */
+.processUrgency {
+  position: relative;
+  z-index: 10;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  background: rgba(201, 168, 76, 0.1);
+  border: 0.5px solid rgba(201, 168, 76, 0.3);
+  padding: 0.3rem 1rem;
+  margin: 0;
+  margin-top: 7rem;
+}
+
+/* STEP TRAIL */
+.processTrail {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Each dot + label stacked vertically */
+.processTrailStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  width: 64px;
+}
+
+.processTrailDot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.processTrailDot.active {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.processTrailDot.done {
+  background: rgba(201, 168, 76, 0.25);
+  border-color: var(--gold);
+}
+
+.processTrailLabel {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.processTrailLabel.active {
+  color: var(--gold-light);
+}
+
+/* Connecting line — nudged down to align with dot center */
+.processTrailLine {
+  width: 32px;
+  height: 0.5px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: background 0.3s ease;
+  margin-top: 13px;
+  flex-shrink: 0;
+}
+
+.processTrailLine.done {
+  background: rgba(201, 168, 76, 0.5);
 }
 
 /* SIDE LABELS */
@@ -143,7 +230,6 @@
   transform: translateY(-20px);
 }
 
-/* Step counter */
 .processStep {
   font-family: var(--font-body);
   font-size: 0.7rem;
@@ -153,7 +239,6 @@
   text-align: center;
 }
 
-/* Card image */
 .processCardImg {
   width: 100%;
   height: 180px;
@@ -161,7 +246,6 @@
   display: block;
 }
 
-/* Card title */
 .processCardTitle {
   font-family: var(--font-body);
   font-size: 0.8rem;
@@ -173,7 +257,6 @@
   margin: 0;
 }
 
-/* Card description */
 .processCardDesc {
   font-family: var(--font-body);
   font-size: 0.78rem;
@@ -184,7 +267,29 @@
   margin: 0;
 }
 
-/* CHEVRON BUTTON at bottom */
+/* Book CTA — last step only */
+.processBookCta {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #1a1200;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.25s ease;
+  box-sizing: border-box;
+}
+
+.processBookCta:hover {
+  background: var(--gold-light);
+}
+
+/* CHEVRON BUTTON */
 .processChevron {
   position: absolute;
   bottom: 2.5rem;
@@ -224,6 +329,13 @@
   50%       { transform: translateY(6px); }
 }
 
+
+@media (max-width:1280px) {
+  .process{
+    min-height: 900px;
+  }
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .processSideLeft,
@@ -233,5 +345,17 @@
 
   .processCard {
     max-width: 280px;
+  }
+
+  .processTrailStep {
+    width: 52px;
+  }
+
+  .processTrailLabel {
+    font-size: 0.42rem;
+  }
+
+  .processTrailLine {
+    width: 20px;
   }
 }

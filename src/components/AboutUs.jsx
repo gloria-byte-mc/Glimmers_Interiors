@@ -56,21 +56,7 @@ const AboutUs = () => {
             transparency and trust.
           </p>
 
-          {/* Stats */}
-          <div className="about__stats">
-            <div className="about__stat">
-              <span className="about__stat-number">10<span>+</span></span>
-              <span className="about__stat-label">Years Experience</span>
-            </div>
-            <div className="about__stat">
-              <span className="about__stat-number">200<span>+</span></span>
-              <span className="about__stat-label">Projects Completed</span>
-            </div>
-            <div className="about__stat">
-              <span className="about__stat-number">98<span>%</span></span>
-              <span className="about__stat-label">Client Satisfaction</span>
-            </div>
-          </div>
+         
 
           {/* CTA */}
           <a href="#contact" className="about__cta">
