@@ -110,14 +110,14 @@
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+ color: var(--white);
 }
 
 .contactHeroSub {
   font-family: var(--font-body);
   font-size: 0.78rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.70);
+ color: var(--white);
   line-height: 1.9;
   letter-spacing: 0.02em;
 }
