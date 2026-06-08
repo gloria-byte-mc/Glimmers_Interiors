@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --white: #ffffff;
+  --black: #0a0a0a;
+  --text-muted: #6b6b6b;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Jost', sans-serif;
+}
+
+
+.about {
+  width: 100%;
+  background: var(--white);
+  padding: 7rem 6rem;
+  box-sizing: border-box;
+}
+
+
+.about__label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 3.5rem;
+}
+
+/*  MAIN GRID  */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* LEFT SIDE  */
+.about__left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Heading ── */
+.about__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.05;
+  color: var(--black);
+  margin: 0;
+  padding-top: 6rem;
+}
+
+.about__heading .normal {
+  font-weight: 900;
+  font-style: normal;
+}
+
+.about__heading .italic {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--black);
+}
+
+/* ── Body ── */
+.about__body {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.95;
+  max-width: 600px;
+}
+
+/* ── Stats row ── */
+.about__stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.about__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.about__stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1;
+}
+
+.about__stat-number span {
+  color: var(--gold);
+}
+
+.about__stat-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── CTA ── */
+.about__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--gold);
+  width: fit-content;
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.about__cta:hover {
+  gap: 1.3rem;
+  color: var(--gold);
+}
+
+.about__cta-arrow {
+  transition: transform 0.3s ease;
+}
+
+.about__cta:hover .about__cta-arrow {
+  transform: translateX(5px);
+}
+
+/* ════ RIGHT SIDE — two images side by side ════ */
+
+.about__right {
+  position: static;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  height: 100%;
+}
+
+/* Large image — left, taller */
+
+.about__img-main {
+  position: static;
+  width: 58%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: none;
+}
+/* Small image — right, shorter, vertically centered 
+.about__img-secondary {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 36%;
+  height: 50% !important;
+  object-fit: cover;
+  display: block;
+  box-shadow: -8px 8px 32px rgba(0,0,0,0.10);
+}
+*/
+
+.about__img-secondary {
+  position: static;
+  width: 38%;
+  height: 52%;
+  object-fit: cover;
+  display: block;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── Gold accent line ── 
+.about__accent {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+}
+  */
+.about__accent {
+  display: none;
+}
+
+/* ════ ANIMATIONS ════ */
+.about__label,
+.about__heading,
+.about__body,
+.about__stats,
+.about__cta,
+.about__right {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about.in-view .about__label  { opacity: 1; transform: none; transition-delay: 0.1s; }
+.about.in-view .about__heading { opacity: 1; transform: none; transition-delay: 0.25s; }
+.about.in-view .about__body    { opacity: 1; transform: none; transition-delay: 0.4s; }
+.about.in-view .about__stats   { opacity: 1; transform: none; transition-delay: 0.5s; }
+.about.in-view .about__cta     { opacity: 1; transform: none; transition-delay: 0.6s; }
+.about.in-view .about__right   { opacity: 1; transform: none; transition-delay: 0.35s; }
+
+/*  RESPONSIVE  */
+
+@media screen and (max-width:1280px) {
+  .about__heading{
+    padding-top: 4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about {
+    padding: 5rem 3rem;
+  }
+
+  .about__grid {
+    gap: 3rem;
+  }
+
+  .about__right {
+    height: 460px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1.5rem;
+  }
+
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about__right {
+    height: 380px;
+  }
+
+  .about__body {
+    max-width: 100%;
+  }
+
+  .about__stats {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__right {
+    height: 280px;
+  }
+
+  .about__stats {
+    flex-wrap: wrap;
+  }
+}
+
+/* ════ RIGHT SIDE OVERRIDE — two images side by side ════ */
+
+
+
+
+
+

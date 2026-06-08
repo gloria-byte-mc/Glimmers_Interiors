@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --white: #ffffff;
+  --black: #0a0a0a;
+  --cream: #f5f0e8;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Jost', sans-serif;
+}
+
+/* Prevent body scroll when drawer is open — 
+   uses position:fixed instead of overflow:hidden 
+   so window.scrollY is preserved */
+body.no-scroll {
+  position: fixed;
+  width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.8rem 3rem;
+  box-sizing: border-box;
+  z-index: 100;
+  background: transparent;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(245, 240, 232, 0.95); /* cream */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Logo */
+.navbarLogo {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+  opacity: 0;
+  animation: navFadeDown 0.8s ease forwards 0.2s;
+}
+
+.navbarLogo span { color: var(--gold); }
+
+/* Nav Links */
+.navbarLinks {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  animation: navFadeDown 0.8s ease forwards 0.4s;
+}
+
+.navbarLinks a {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbarLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.navbarLinks a:hover { color: var(--gold-light); }
+.navbarLinks a:hover::after { width: 100%; }
+
+/* CTA */
+.navbarCta {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.55rem 1.4rem;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  opacity: 0;
+  animation: navFadeDown 0.8s ease forwards 0.6s;
+}
+
+.navbarCta:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+
+/* Mobile hamburger */
+.navbarMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+}
+
+.navbarMenuBtn span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--white);
+}
+
+/* Mobile Drawer */
+.navbarDrawer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.navbarDrawer.open { display: flex; }
+
+.navbarDrawerClose {
+  position: absolute;
+  top: 1.8rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.navbarDrawerLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbarDrawerLinks a {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbarDrawerLinks a:hover { color: var(--gold-light); }
+
+.navbarDrawerCta {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  transition: background 0.3s ease;
+}
+
+.navbar.scrolled .navbarLogo {
+  color: var(--black);
+}
+
+
+.navbar.scrolled .navbarLinks a {
+  color: var(--black);
+}
+
+.navbar.scrolled .navbarLinks a:hover {
+  color: var(--gold);
+}
+
+
+.navbar.scrolled .navbarCta {
+  color: var(--black);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar.scrolled .navbarCta:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+
+
+.navbar.scrolled .navbarMenuBtn span {
+  background: var(--black);
+}
+
+.navbarDrawerCta:hover { background: var(--gold-light); }
+
+@keyframes navFadeDown {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 1.4rem 1.5rem; }
+  .navbarLinks, .navbarCta { display: none; }
+  .navbarMenuBtn { display: flex; }
+}

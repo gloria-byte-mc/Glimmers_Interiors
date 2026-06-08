@@ -1,0 +1,131 @@
+/* ─── Contact Map / Visit Us ────────────────────────────────── */
+.contactMap {
+  width: 100%;
+  background: var(--cream);
+  padding: 7rem 6rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.contactMapText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.contactMapText.inView { opacity: 1; transform: none; }
+
+.contactMapLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contactMapHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--black);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.contactMapHeading em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.contactMapBody {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.95;
+}
+
+.contactMapDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contactMapDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.contactMapDetailLabel {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.contactMapDetailValue {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--black);
+}
+
+/* Map embed placeholder */
+.contactMapEmbed {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactMapEmbed.inView { opacity: 1; transform: none; }
+
+.contactMapEmbedImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(30%) sepia(10%);
+}
+
+.contactMapEmbedLabel {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--black);
+  padding: 0.6rem 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  .contactMap { padding: 5rem 3rem; gap: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .contactMap { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2.5rem; }
+}

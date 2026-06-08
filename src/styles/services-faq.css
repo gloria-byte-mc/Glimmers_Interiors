@@ -1,0 +1,172 @@
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --white: #ffffff;
+  --black: #0a0a0a;
+  --cream: #f5f0e8;
+  --text-muted: #6b6b6b;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Jost', sans-serif;
+}
+
+.servicesFAQ {
+  width: 100%;
+  background: var(--cream);
+  padding: 7rem 5rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+/* LEFT */
+.servicesFAQLeft {
+  position: sticky;
+  top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.servicesFAQ.inView .servicesFAQLeft {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.1s;
+}
+
+.servicesFAQLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.servicesFAQHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 900;
+  color: var(--black);
+  margin: 0;
+  line-height: 1.05;
+}
+
+.servicesFAQHeading em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.servicesFAQDesc {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+
+.servicesFAQCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 0.35rem;
+  width: fit-content;
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.servicesFAQCta:hover { gap: 1.3rem; color: var(--gold); }
+
+/* RIGHT — accordion */
+.servicesFAQRight {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.servicesFAQ.inView .servicesFAQRight {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.3s;
+}
+
+.servicesFAQItem {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.servicesFAQQuestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  cursor: pointer;
+  gap: 1rem;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.servicesFAQQuestionText {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--black);
+  line-height: 1.4;
+}
+
+.servicesFAQIcon {
+  font-size: 1.2rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  font-weight: 300;
+}
+
+.servicesFAQItem.open .servicesFAQIcon {
+  transform: rotate(45deg);
+}
+
+.servicesFAQAnswer {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.9;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding-bottom: 0;
+}
+
+.servicesFAQItem.open .servicesFAQAnswer {
+  max-height: 300px;
+  padding-bottom: 1.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .servicesFAQ { padding: 5rem 3rem; gap: 4rem; }
+}
+
+@media (max-width: 768px) {
+  .servicesFAQ {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.5rem;
+    gap: 3rem;
+  }
+  .servicesFAQLeft { position: static; }
+}

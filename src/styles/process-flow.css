@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --white: #ffffff;
+  --black: #0a0a0a;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Jost', sans-serif;
+}
+
+/* SECTION */
+.process {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* BACKGROUND IMAGE */
+.processBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* OVERLAY */
+.processOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 10, 5, 0.68);
+  z-index: 1;
+}
+
+/* HEADER — label + heading at top center */
+.processHeader {
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.processLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+.processHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 900;
+  color: var(--white);
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.processHeading em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* SIDE LABELS */
+.processSideLeft {
+  position: absolute;
+  left: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.5);
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.processSideRight {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.5);
+  writing-mode: vertical-rl;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.processSideRight:hover {
+  color: var(--gold-light);
+}
+
+/* CENTER CARD */
+.processCard {
+  position: relative;
+  z-index: 10;
+  background: var(--white);
+  width: 100%;
+  max-width: 320px;
+  padding: 1.8rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.processCard.exiting {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.processCard.entering {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Step counter */
+.processStep {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+/* Card image */
+.processCardImg {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card title */
+.processCardTitle {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-align: center;
+  margin: 0;
+}
+
+/* Card description */
+.processCardDesc {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: rgba(0,0,0,0.6);
+  line-height: 1.85;
+  text-align: center;
+  margin: 0;
+}
+
+/* CHEVRON BUTTON at bottom */
+.processChevron {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.3s ease;
+  padding: 0;
+}
+
+.processChevron:hover {
+  color: var(--gold-light);
+}
+
+.processChevron span {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.processChevronIcon {
+  font-size: 1.2rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .processSideLeft,
+  .processSideRight {
+    display: none;
+  }
+
+  .processCard {
+    max-width: 280px;
+  }
+}

@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --white: #ffffff;
+  --black: #0a0a0a;
+  --text-muted: #6b6b6b;
+  --border: rgba(0,0,0,0.15);
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Jost', sans-serif;
+}
+
+/* SECTION */
+.contact {
+  width: 100%;
+  background: var(--white);
+  padding: 6rem 6rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: start;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.contact.inView {
+  opacity: 1;
+  transform: none;
+}
+
+/* LEFT */
+.contactLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.contactLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contactHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-weight: 900;
+  color: var(--black);
+  line-height: 1.0;
+  margin: 0;
+}
+
+.contactHeading em {
+  font-style: italic;
+  font-weight: 400;
+  display: block;
+}
+
+.contactBody {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.9;
+  max-width: 320px;
+}
+
+/* Contact details */
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.contactDetail {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.contactDetailIcon {
+  font-size: 0.85rem;
+  color: var(--gold);
+}
+
+/* Virtual consultation note */
+.contactVirtual {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  font-style: italic;
+  border-left: 2px solid var(--gold);
+  padding-left: 1rem;
+  line-height: 1.7;
+}
+
+/* RIGHT — form */
+.contactRight {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+/* Form group */
+.contactFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+}
+
+.contactFormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.contactFormLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contactFormInput,
+.contactFormTextarea {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--black);
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0.3rem 0;
+  resize: none;
+}
+
+.contactFormTextarea {
+  min-height: 100px;
+}
+
+.contactFormInput::placeholder,
+.contactFormTextarea::placeholder {
+  color: rgba(0,0,0,0.25);
+}
+
+/* Service select */
+.contactFormSelect {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--black);
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0.3rem 0;
+  cursor: pointer;
+  appearance: none;
+}
+
+/* Submit button */
+.contactSubmit {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--gold);
+  padding: 1rem 0 0.4rem;
+  cursor: pointer;
+  transition: gap 0.3s ease, color 0.3s ease;
+  width: fit-content;
+  margin-top: 1.5rem;
+}
+
+.contactSubmit:hover {
+  gap: 1.5rem;
+  color: var(--gold);
+}
+
+.contactSubmitArrow {
+  transition: transform 0.3s ease;
+}
+
+.contactSubmit:hover .contactSubmitArrow {
+  transform: translateX(5px);
+}
+
+/* Calendly divider */
+.contactDivider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0 1.5rem;
+}
+
+.contactDividerLine {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.contactDividerText {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Calendly button */
+.contactCalendly {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--black);
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.contactCalendly:hover {
+  background: var(--gold);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .contact { padding: 5rem 3rem; gap: 4rem; }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.5rem;
+    gap: 3rem;
+  }
+
+  .contactBody { max-width: 100%; }
+  .contactFormRow { grid-template-columns: 1fr; gap: 0; }
+}

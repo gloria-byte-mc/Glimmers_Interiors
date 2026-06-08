@@ -1,0 +1,97 @@
+/* ─── About Mission ─────────────────────────────────────────── */
+.aboutMission {
+  width: 100%;
+  background: var(--white);
+  padding: 7rem 6rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.aboutMissionLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.aboutMissionLeft.inView {
+  opacity: 1;
+  transform: none;
+}
+
+.aboutMissionLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.aboutMissionHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-weight: 900;
+  color: var(--black);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.aboutMissionHeading em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.aboutMissionAccent {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.aboutMissionRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0.2s;
+}
+
+.aboutMissionRight.inView {
+  opacity: 1;
+  transform: none;
+}
+
+.aboutMissionStatement {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--black);
+  line-height: 1.6;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.aboutMissionBody {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.95;
+}
+
+@media (max-width: 1024px) {
+  .aboutMission { padding: 5rem 3rem; gap: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .aboutMission { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2.5rem; }
+}

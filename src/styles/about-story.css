@@ -1,0 +1,90 @@
+/* ─── About Story ───────────────────────────────────────────── */
+.aboutStory {
+  width: 100%;
+  background: var(--cream);
+  padding: 7rem 6rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.aboutStoryImgWrap {
+  position: relative;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.aboutStoryImgWrap.inView { opacity: 1; transform: none; }
+
+.aboutStoryImgMain {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.aboutStoryImgSecondary {
+  position: absolute;
+  bottom: -2.5rem;
+  right: -2.5rem;
+  width: 52%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border: 6px solid var(--cream);
+}
+
+.aboutStoryText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0.2s;
+}
+
+.aboutStoryText.inView { opacity: 1; transform: none; }
+
+.aboutStoryLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.aboutStoryHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--black);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.aboutStoryHeading em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.aboutStoryBody {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.95;
+}
+
+@media (max-width: 1024px) {
+  .aboutStory { padding: 5rem 3rem; gap: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .aboutStory { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
+  .aboutStoryImgSecondary { display: none; }
+}

@@ -1,0 +1,431 @@
+/* ContactBooking.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500&display=swap');
+/* Other variables are defined globally */
+
+/* ─── Section Wrapper ───────────────────────────────────────── */
+.contact-section {
+  background-color: var(--white);
+  padding: 100px 80px;
+  font-family: var(--font-body);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* ─── Inner Grid ────────────────────────────────────────────── */
+.contact-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ─── Left Column ───────────────────────────────────────────── */
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.contact-heading {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 900;
+  line-height: 1.0;
+  color: var(--brown);
+  margin: 0;
+}
+
+.contact-heading em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.contact-description {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 300px;
+}
+
+/* ─── Contact Info ──────────────────────────────────────────── */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--brown);
+}
+
+.contact-info-item svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ─── Divider ───────────────────────────────────────────────── */
+.contact-divider {
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+  margin-top: 4px;
+}
+
+/* ─── Virtual Badge ─────────────────────────────────────────── */
+.virtual-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brown);
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  width: fit-content;
+  margin-top: 8px;
+}
+
+.virtual-badge span.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ─── Right Column — Form ───────────────────────────────────── */
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ─── Tab Toggle ────────────────────────────────────────────── */
+.form-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--border);
+}
+
+.form-tab {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 12px 20px 14px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.form-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.form-tab.active {
+  color: var(--brown);
+}
+
+.form-tab.active::after {
+  transform: scaleX(1);
+}
+
+/* ─── Form Rows ─────────────────────────────────────────────── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 0;
+}
+
+.form-row.full {
+  grid-template-columns: 1fr;
+}
+
+/* ─── Form Fields ───────────────────────────────────────────── */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.form-field label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--brown);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--border);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184, 157, 110, 0.12);
+}
+
+.form-field textarea {
+  resize: none;
+  height: 100px;
+  line-height: 1.6;
+}
+
+.form-field select {
+  appearance: none;
+  cursor: pointer;
+}
+
+/* ─── Calendly Panel ────────────────────────────────────────── */
+.calendly-panel {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calendly-panel.visible {
+  display: flex;
+}
+
+.calendly-notice {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding: 16px 0;
+  border-top: 1px solid var(--cream);
+  border-bottom: 1px solid var(--cream);
+}
+
+.calendly-embed-placeholder {
+  background: var(--cream);
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.calendly-embed-placeholder svg {
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+/* ─── Submit Button ─────────────────────────────────────────── */
+.submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.submit-note {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brown);
+  padding: 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.btn-submit::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.btn-submit:hover {
+  color: var(--gold);
+}
+
+.btn-submit:hover::after {
+  transform: scaleX(1);
+}
+
+.btn-submit:hover .arrow-icon {
+  transform: translateX(6px);
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+  color: var(--gold);
+}
+
+/* ─── Success Message ───────────────────────────────────────── */
+.form-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.form-success.visible {
+  display: flex;
+}
+
+.success-icon {
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+
+.form-success h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--brown);
+  margin: 0;
+}
+
+.form-success p {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .contact-section {
+    padding: 72px 40px;
+  }
+
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .contact-description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 60px 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .submit-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
