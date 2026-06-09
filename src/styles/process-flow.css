@@ -180,6 +180,7 @@
   color: rgba(255,255,255,0.5);
   writing-mode: vertical-rl;
   transform: translateY(-50%) rotate(180deg);
+  display: none;
 }
 
 .processSideRight {
@@ -199,6 +200,7 @@
   background: none;
   border: none;
   padding: 0;
+  display: none;
 }
 
 .processSideRight:hover {
