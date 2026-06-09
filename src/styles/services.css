@@ -23,7 +23,7 @@
 .services__top {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.8rem;
+  gap: 1.5rem;
   align-items: stretch;
   margin-bottom: 0.8rem;
 }
@@ -98,7 +98,7 @@
 .services__bottom {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.8rem;
+  gap: 1.5rem;
   align-items: stretch;
 }
 
