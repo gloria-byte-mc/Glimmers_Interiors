@@ -260,6 +260,12 @@
 }
 
 /* Responsive */
+@media (min-width:1440px){
+.contactFormSection{
+  padding: 7rem 15rem;
+}
+}
+
 @media (max-width: 1024px) {
   .contactFormSection { padding: 5rem 3rem; gap: 4rem; }
 }
