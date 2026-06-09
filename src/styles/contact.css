@@ -267,6 +267,12 @@
 }
 
 /* RESPONSIVE */
+
+@media (min-width:1440px){
+  .contact{
+    padding: 15rem 15rem;
+  }
+}
 @media (max-width: 1024px) {
   .contact { padding: 5rem 3rem; gap: 4rem; }
 }
