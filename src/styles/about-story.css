@@ -1,4 +1,4 @@
-/* ─── About Story ───────────────────────────────────────────── */
+/* ─── About Story ─────────────────────────────────────────── */
 .aboutStory {
   width: 100%;
   background: var(--cream);
@@ -6,10 +6,11 @@
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  gap: 6rem;
   align-items: center;
 }
 
+/* IMAGE SIDE */
 .aboutStoryImgWrap {
   position: relative;
   opacity: 0;
@@ -37,6 +38,17 @@
   border: 6px solid var(--cream);
 }
 
+/* Gold accent line on image */
+.aboutStoryImgAccent {
+  position: absolute;
+  top: 2rem;
+  left: -1rem;
+  width: 3px;
+  height: 80px;
+  background: var(--gold);
+}
+
+/* TEXT SIDE */
 .aboutStoryText {
   display: flex;
   flex-direction: column;
@@ -70,6 +82,7 @@
 .aboutStoryHeading em {
   font-style: italic;
   font-weight: 400;
+  color: var(--gold);
 }
 
 .aboutStoryBody {
@@ -80,11 +93,112 @@
   line-height: 1.95;
 }
 
+/* TRUST POINTS */
+.aboutStoryPoints {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.aboutStoryPoint {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.aboutStoryPointIcon {
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.aboutStoryPointText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.aboutStoryPointTitle {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: 0.05em;
+}
+
+.aboutStoryPointDesc {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* CTA ROW */
+.aboutStoryCtaRow {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.aboutStoryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  text-decoration: none;
+  padding: 0.9rem 1.8rem;
+  transition: background 0.3s ease;
+}
+
+.aboutStoryCta:hover { background: var(--gold-light); }
+
+.aboutStoryCtaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 0.35rem;
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.aboutStoryCtaSecondary:hover { gap: 1.3rem; color: var(--gold); }
+
+/* RESPONSIVE */
+
+@media (min-width: 1440px) {
+  .aboutStoryImgMain {
+    aspect-ratio: 4 / 4;
+  }
+
+  .aboutStory {
+    padding: 7rem 6rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .aboutStory { padding: 5rem 3rem; gap: 3rem; }
 }
 
 @media (max-width: 768px) {
-  .aboutStory { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
+  .aboutStory { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 3rem; }
   .aboutStoryImgSecondary { display: none; }
+  .aboutStoryImgAccent { display: none; }
 }
