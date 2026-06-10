@@ -96,6 +96,12 @@
   margin: 0;
 }
 
+@media (min-width:1440px) {
+  .aboutValues{
+    padding: 7rem 15rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .aboutValues { padding: 5rem 3rem; }
 }

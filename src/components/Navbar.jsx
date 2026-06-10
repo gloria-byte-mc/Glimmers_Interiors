@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import '../styles/navbar.css';
 
 const NAV_LINKS = [
+  { label: 'Home',  href: '/'    },
   { label: 'About Us',  href: '/about'    },
   { label: 'Services',  href: '/services'  },
   { label: 'Portfolio', href: '/portfolio' },
@@ -20,8 +21,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Lock body scroll when drawer open — but DON'T use overflow:hidden
-  // as it resets scrollY. Use a CSS class instead.
+
   useEffect(() => {
     if (drawerOpen) {
       document.body.classList.add('no-scroll');
@@ -35,17 +35,18 @@ const Navbar = () => {
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
 
-        <Link to="/" className="navbarLogo">
-          Glimmers<span>.</span>
-        </Link>
+  <Link to="/" className="navbarLogo">
+  <img src="/images/glimmerLogo.png" alt="Glimmers" className="navbarLogoImg" />
+  </Link>
 
-        <ul className="navbarLinks">
-          {NAV_LINKS.map(link => (
-            <li key={link.label}>
-              <Link to={link.href}>{link.label}</Link>
-            </li>
-          ))}
-        </ul>
+    
+<ul className="navbarLinks">
+  {NAV_LINKS.map(link => (
+    <li key={link.label}>
+      <NavLink to={link.href}>{link.label}</NavLink>
+    </li>
+  ))}
+</ul>
 
         <a href="#contact" className="navbarCta">Book Now</a>
 
