@@ -54,7 +54,7 @@ const Footer = () => {
           </p>
           <p className="footerContactItem">
             <a href="tel:+254700000000">
-              +254 700 000 000
+              +254 707 203223
             </a>
           </p>
         </div>

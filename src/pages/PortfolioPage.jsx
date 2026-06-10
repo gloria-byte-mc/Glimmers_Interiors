@@ -152,7 +152,7 @@ const PortfolioPage = () => {
           <div className="portfolioHeroRight">
             <p className="portfolioHeroLabel">Portfolio</p>
             <p className="portfolioHeroSub">
-              A curated selection of our most celebrated projects —
+              A curated selection of our most celebrated projects 
               each one a testament to our commitment to luxury,
               precision, and timeless design.
             </p>
