@@ -142,7 +142,7 @@ const ProcessPage = () => {
       {/* ════ INTRO STRIP ════ */}
       <div className="processPageIntro">
         <p className="processPageIntroText">
-          Most projects begin within <em>2 weeks</em> of your first consultation —
+          Most projects begin within <em>2 weeks</em> of your first consultation -
           and are delivered on time, every time.
         </p>
         <div className="processPageIntroStats">

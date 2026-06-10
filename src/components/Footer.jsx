@@ -1,4 +1,5 @@
 import '../styles/footer.css';
+import { FaInstagram, FaPinterest, FaBehance, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -32,14 +33,22 @@ const Footer = () => {
           <a href="#contact" className="footerLink">Contact</a>
         </div>
 
-        {/* Follow Us */}
-        <div className="footerCol">
-          <p className="footerColLabel">Follow Us</p>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="footerLink">Instagram</a>
-          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" className="footerLink">Pinterest</a>
-          <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="footerLink">Behance</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="footerLink">LinkedIn</a>
-        </div>
+ {/* Follow Us */}
+<div className="footerCol">
+  <p className="footerColLabel">Follow Us</p>
+  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="footerLink">
+    <FaInstagram size={14} /> Instagram
+  </a>
+  <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" className="footerLink">
+    <FaPinterest size={14} /> Pinterest
+  </a>
+  <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="footerLink">
+    <FaBehance size={14} /> Behance
+  </a>
+  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="footerLink">
+    <FaLinkedinIn size={14} /> LinkedIn
+  </a>
+</div>
 
         {/* Contact */}
         <div className="footerContact">
@@ -61,7 +70,7 @@ const Footer = () => {
 
       </div>
 
-      {/* ── Marquee ───────────────────────────────────────────── */}
+      {/*  Marquee  */}
       <div className="footerMarquee" aria-hidden="true">
         <div className="footerMarqueeTrack">
           {marqueeItems.map((_, i) => (
@@ -73,7 +82,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* ── Bottom Bar ────────────────────────────────────────── */}
+      {/*  Bottom Bar */}
       <div className="footerBottom">
         <p className="footerCopyright">
           © {year} Glimmers Interiors & Construction. All rights reserved.

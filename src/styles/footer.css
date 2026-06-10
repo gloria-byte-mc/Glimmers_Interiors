@@ -215,7 +215,13 @@
   color: var(--gold);
 }
 
-/* ─── Responsive ────────────────────────────────────────────── */
+.footerLink {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Responsive  */
 @media (max-width: 1024px) {
   .footerGrid {
     grid-template-columns: 1fr 1fr;
