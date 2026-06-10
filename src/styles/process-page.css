@@ -575,7 +575,7 @@
   .processPageHeroContent {
     flex-direction: column;
     left: 1.5rem; right: 1.5rem;
-    top: auto; bottom: 2rem;
+     bottom: 2rem;
   }
   .processPageHeroLineOne span,
   .processPageHeroLineTwo span { font-size: clamp(2.8rem, 11vw, 4.5rem); }

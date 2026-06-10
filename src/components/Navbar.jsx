@@ -37,7 +37,8 @@ const Navbar = () => {
 
   <Link to="/" className="navbarLogo">
   <img src="/images/glimmerLogo.png" alt="Glimmers" className="navbarLogoImg" />
-  </Link>
+  <span className="navbarLogoText">Glimmers</span>
+</Link>
 
     
 <ul className="navbarLinks">
