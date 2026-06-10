@@ -158,6 +158,12 @@
 }
 
 /* RESPONSIVE */
+
+@media (min-width:1440px){
+  .servicesFAQ{
+    padding: 7rem 15rem;
+  }
+}
 @media (max-width: 1024px) {
   .servicesFAQ { padding: 5rem 3rem; gap: 4rem; }
 }
