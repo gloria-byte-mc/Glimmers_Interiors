@@ -221,6 +221,25 @@
   gap: 0.6rem;
 }
 
+.footerBottomLink-p{
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerBottomLink-p a{
+  color: var(--text-muted);
+}
+
+.footerBottomLink-p a:hover{
+  color: var(--gold);
+}
+
 /* Responsive  */
 @media (max-width: 1024px) {
   .footerGrid {

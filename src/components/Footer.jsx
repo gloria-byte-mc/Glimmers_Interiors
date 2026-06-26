@@ -88,8 +88,10 @@ const Footer = () => {
           © {year} Glimmers Interiors & Construction. All rights reserved.
         </p>
         <div className="footerBottomLinks">
+          
           <a href="/privacy" className="footerBottomLink">Privacy Policy</a>
           <a href="/terms" className="footerBottomLink">Terms of Use</a>
+          <p className='footerBottomLink-p'>Powered by <a href="">Nakkei</a></p>
         </div>
       </div>
 

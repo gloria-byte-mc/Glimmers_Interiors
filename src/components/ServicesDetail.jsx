@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import '../styles/services-detail.css'
+import { useNavigate } from 'react-router-dom';
 
 const SERVICES = [
   {
@@ -60,8 +61,23 @@ const SERVICES = [
       'Design iteration support',
       'Client approval process',
     ],
-    image: 'https://images.unsplash.com/photo-1503174971373-b1f69850bded?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?auto=format&fit=crop&w=800&q=80',
     reverse: true,
+  },
+  {
+    number: '05',
+    name: 'Routine Repairs & Re-designs',
+    description:
+      'Spaces evolve, and so should they age well. We handle ongoing maintenance, repairs, and refreshes for existing homes and commercial spaces keeping them functional, current, and aligned with how you live or work today.',
+    features: [
+      'General maintenance & repairs',
+      'Partial room re-designs',
+      'Furniture & finish refresh',
+      'Fixture & fitting upgrades',
+      'Seasonal & post-occupancy touch-ups',
+    ],
+    image: 'https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?auto=format&fit=crop&w=800&q=80',
+    reverse: false,
   },
 ];
 
@@ -118,7 +134,7 @@ const ServicesDetail = () => {
 </li>
   ))}
 </ul>
-            <a href="#contact" className="servicesDetailCta">
+            <a href="/contact" className="servicesDetailCta">
               Get Started →
             </a>
           </div>

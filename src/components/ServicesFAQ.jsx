@@ -56,7 +56,7 @@ const ServicesFAQ = () => {
           Have more questions? We are always happy to walk you through our
           process and help you understand what working with Glimmers looks like.
         </p>
-        <a href="#contact" className="servicesFAQCta">
+        <a href="/contact" className="servicesFAQCta">
           Talk To Us →
         </a>
       </div>

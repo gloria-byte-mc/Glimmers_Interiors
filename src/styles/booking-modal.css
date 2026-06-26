@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --white: #ffffff;
+  --black: #0a0a0a;
+  --text-muted: #6b6b6b;
+  --border: rgba(0,0,0,0.15);
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Jost', sans-serif;
+}
+
+/* OVERLAY */
+.bookingOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.65);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 1000;
+  animation: bookingFadeIn 0.3s ease;
+}
+
+@keyframes bookingFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* MODAL */
+.bookingModal {
+  position: relative;
+  background: var(--white);
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 3.5rem 3rem;
+  box-sizing: border-box;
+  animation: bookingSlideUp 0.4s ease;
+}
+
+@keyframes bookingSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+.bookingModal::-webkit-scrollbar {
+  width: 4px;
+}
+.bookingModal::-webkit-scrollbar-thumb {
+  background: var(--gold);
+}
+
+/* CLOSE BUTTON */
+.bookingClose {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--black);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.bookingClose:hover {
+  color: var(--gold);
+  transform: rotate(90deg);
+}
+
+/* HEADER */
+.bookingLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem;
+}
+
+.bookingHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 900;
+  color: var(--black);
+  line-height: 1.1;
+  margin: 0 0 2rem;
+}
+
+.bookingHeading em {
+  font-style: italic;
+  font-weight: 400;
+  display: block;
+}
+
+/* FORM */
+.bookingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.bookingFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+}
+
+.bookingFormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.bookingFormLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.bookingFormInput,
+.bookingFormSelect {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--black);
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0.3rem 0;
+}
+
+.bookingFormSelect {
+  cursor: pointer;
+  appearance: none;
+}
+
+.bookingFormInput::placeholder {
+  color: rgba(0,0,0,0.25);
+}
+
+.bookingHint {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-style: italic;
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+/* SUBMIT */
+.bookingSubmit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--black);
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background 0.3s ease, gap 0.3s ease;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.bookingSubmit:hover {
+  background: var(--gold);
+  gap: 1.4rem;
+}
+
+.bookingSubmitArrow {
+  transition: transform 0.3s ease;
+}
+
+.bookingSubmit:hover .bookingSubmitArrow {
+  transform: translateX(5px);
+}
+
+/* SUCCESS STATE */
+.bookingSuccess {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0 0.5rem;
+}
+
+.bookingSuccess p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .bookingModal { padding: 2.5rem 1.5rem; }
+  .bookingFormRow { grid-template-columns: 1fr; gap: 0; }
+}

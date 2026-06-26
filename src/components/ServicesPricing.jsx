@@ -95,7 +95,7 @@ const ServicesPricing = () => {
       ))}
       </ul>
 
-            <a href="#contact" className="servicesPricingBtn">
+            <a href="/contact" className="servicesPricingBtn">
               Get a Quote →
             </a>
 

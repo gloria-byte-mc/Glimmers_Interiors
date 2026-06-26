@@ -1,0 +1,102 @@
+.aboutVision {
+  width: 100%;
+  background: var(--white);
+  padding: 7rem 6rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.aboutVisionLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.aboutVisionLeft.inView {
+  opacity: 1;
+  transform: none;
+}
+
+.aboutVisionLabel {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.aboutVisionHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-weight: 900;
+  color: var(--black);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.aboutVisionHeading em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.aboutVisionAccent {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.aboutVisionRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0.2s;
+}
+
+.aboutVisionRight.inView {
+  opacity: 1;
+  transform: none;
+}
+
+.aboutVisionStatement {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--black);
+  line-height: 1.6;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.aboutVisionBody {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.95;
+}
+
+@media (min-width:1440px){
+.aboutVision{
+  padding: 7rem 15rem;
+}
+}
+
+@media (max-width: 1024px) {
+  .aboutVision { padding: 5rem 3rem; gap: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .aboutVision { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2.5rem; }
+}

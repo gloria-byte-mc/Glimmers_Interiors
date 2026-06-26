@@ -26,7 +26,7 @@ const AboutTeam = () => {
     <section className="aboutTeam">
       <div className="aboutTeamHeader" ref={headerRef}>
         <p className="aboutTeamLabel">The People Behind The Work</p>
-        <h2 className="aboutTeamHeading">Meet The <em>Team</em></h2>
+        <h2 className="aboutTeamHeading">Meet Our <em>professionals</em></h2>
       </div>
       <div className="aboutTeamGrid">
         {TEAM.map((member, i) => (

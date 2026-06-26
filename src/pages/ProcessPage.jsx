@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Check, Clock, FileText, Ruler, HardHat, Video } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import '../styles/process-page.css'
 import Footer from '../components/Footer';
+import BookingModal from '../components/BookingModal';
 
 const BG_HERO = 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80';
 const BG_CTA  = 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1920&q=80';
@@ -74,6 +75,8 @@ const ProcessPage = () => {
   const stepsRef = useRef(null);
   const ctaRef   = useRef(null);
   const stepRefs = useRef([]);
+  const [bookingOpen, setBookingOpen] = useState(false);
+  
 
   useEffect(() => {
     const observers = [];
@@ -100,6 +103,8 @@ const ProcessPage = () => {
 
     return () => observers.forEach(o => o.disconnect());
   }, []);
+
+  
 
   return (
     <div>
@@ -131,15 +136,16 @@ const ProcessPage = () => {
               confidence, control, and a finished space that exceeds
               your expectations from first consultation to final reveal.
             </p>
-            <a href="/contact" className="processPageHeroCta">
+            <a  className="processPageHeroCta"  onClick={() => setBookingOpen(true)}>
               Book a Free Consultation →
             </a>
+            <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
           </div>
 
         </div>
       </section>
 
-      {/* ════ INTRO STRIP ════ */}
+     
       <div className="processPageIntro">
         <p className="processPageIntroText">
           Most projects begin within <em>2 weeks</em> of your first consultation -
@@ -225,9 +231,11 @@ const ProcessPage = () => {
             begin within 2 weeks of your first call.
           </p>
           <div className="processPageCtaBtns">
-            <a href="/contact" className="processPageCtaBtnPrimary">
+            <a  className="processPageCtaBtnPrimary" onClick={() => setBookingOpen(true)}>
               Book a Free Consultation →
             </a>
+            <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
+
             <a href="/portfolio" className="processPageCtaBtnSecondary">
               View Our Work
             </a>

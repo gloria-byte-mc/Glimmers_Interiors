@@ -6,16 +6,22 @@ import AboutValues  from '../components/AboutValues';
 import AboutTeam    from '../components/AboutTeam';
 import AboutCta     from '../components/AboutCta';
 import Footer       from '../components/Footer';
+import AboutVision from '../components/AboutVision';
 
 const AboutPage = () => {
   return (
     <>
       <AboutHero />
       <AboutMission />
+       {/* 
+      <AboutVision />
+     
       <AboutStats />
+      */}
+       <AboutTeam />
       <AboutStory />
       <AboutValues />
-      <AboutTeam />
+     
       <AboutCta />
       <Footer />
     </>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import BookingModal from './BookingModal';
 import '../styles/navbar.css';
 
 const NAV_LINKS = [
@@ -14,6 +15,7 @@ const NAV_LINKS = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawer] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -30,6 +32,11 @@ const Navbar = () => {
     }
     return () => document.body.classList.remove('no-scroll');
   }, [drawerOpen]);
+
+  const openBooking = () => {
+    setDrawer(false);
+    setBookingOpen(true);
+  };
 
   return (
     <>
@@ -49,7 +56,7 @@ const Navbar = () => {
   ))}
 </ul>
 
-        <a href="#contact" className="navbarCta">Book Now</a>
+        <button className="navbarCta" onClick={openBooking}>Book Now</button>
 
         <button
           className="navbarMenuBtn"
@@ -74,10 +81,12 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <a href="#contact" className="navbarDrawerCta" onClick={() => setDrawer(false)}>
+        <button className="navbarDrawerCta" onClick={openBooking}>
           Book Now
-        </a>
+        </button>
       </div>
+
+      <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/portfolio.css'
+import { useNavigate } from 'react-router-dom';
 
 const PROJECTS = [
   {
@@ -47,6 +48,7 @@ const Portfolio = () => {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
   const sectionRef = useRef(null);
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -117,7 +119,6 @@ const Portfolio = () => {
 
         </div>
 
-        {/* RIGHT — counter top, image, project details, nav arrows at bottom */}
         <div className="portfolioRight">
 
           <p className="portfolioCounterRight">{counter}</p>

@@ -40,7 +40,7 @@ body.no-scroll {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-/* Logo */
+
 .navbarLogo {
   font-family: var(--font-heading);
   font-size: 0.95rem;
@@ -55,7 +55,7 @@ body.no-scroll {
 
 .navbarLogo span { color: var(--gold); }
 
-/* Nav Links */
+
 .navbarLinks {
   display: flex;
   align-items: center;
@@ -106,6 +106,7 @@ body.no-scroll {
   border: 1px solid rgba(255, 255, 255, 0.6);
   transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   opacity: 0;
+  background-color: transparent;
   animation: navFadeDown 0.8s ease forwards 0.6s;
 }
 
@@ -264,6 +265,9 @@ body.no-scroll {
 .navbar.scrolled .navbarLogoText {
   color: var(--black);
 }
+
+
+
 
 @keyframes navFadeDown {
   from { opacity: 0; transform: translateY(-14px); }
