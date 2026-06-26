@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react';
 import '../styles/contact-map.css';
 
-const MAP_IMG = 'https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80';
+// Replace this with the embed URL you copy from Google Maps
+// (Share -> Embed a map -> copy the src="..." value)
+const MAP_EMBED_URL =
+  'https://www.google.com/maps/embed?pb=YOUR_EMBED_URL_HERE';
 
 const ContactMap = () => {
   const textRef = useRef(null);
@@ -49,17 +52,16 @@ const ContactMap = () => {
       </div>
 
       <div className="contactMapEmbed" ref={mapRef}>
-        <img src={MAP_IMG} alt="Nairobi Kenya" className="contactMapEmbedImg" />
-        {/*
-          DEVELOPER NOTE:
-          Replace the image above with a real Google Maps embed:
-          <iframe
-            src="https://www.google.com/maps/embed?pb=YOUR_EMBED_URL"
-            width="100%" height="100%" style={{ border: 0 }}
-            allowFullScreen loading="lazy"
-          />
-        */}
-        <span className="contactMapEmbedLabel">Nairobi, Kenya</span>
+        <iframe
+          src={MAP_EMBED_URL}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Glimmers Interiors location map"
+        />
       </div>
 
     </section>
