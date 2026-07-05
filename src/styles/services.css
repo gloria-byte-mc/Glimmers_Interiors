@@ -292,5 +292,32 @@
 
 @media (max-width: 480px) {
   .services__top,
-  .services__bottom { grid-template-columns: 1fr; }
+  .services__bottom {
+    display: flex;
+    grid-template-columns: unset; /* override the grid */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem; /* room so snap doesn't clip shadow/edges */
+
+    /* hide scrollbar but keep it scrollable */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .services__top::-webkit-scrollbar,
+  .services__bottom::-webkit-scrollbar {
+    display: none;
+  }
+
+  .services__left,
+  .services__card,
+  .services__bottom-text {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    
+  }
 }

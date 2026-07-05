@@ -299,9 +299,17 @@
 }
 
 @media (max-width: 480px) {
-  .testimonialsGrid { grid-template-columns: 1fr; }
-  .testimonialsItem1 { height: 300px; }
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 1rem;
+  }
+
+  /* slightly taller boxes at this breakpoint */
+  .testimonialsItem1 { height: 340px; } /* was 300px */
   .testimonialsItem2 .itemImgWrap,
   .testimonialsItem3 .itemImgWrap,
-  .testimonialsItem4 .itemImgWrap { height: 240px; }
+  .testimonialsItem4 .itemImgWrap {
+    height: 340px; /* was 240px */
+  }
 }

@@ -165,7 +165,46 @@
 }
 
 @media (max-width: 768px) {
-  .servicesDetail { padding: 4rem 1.5rem; }
-  .servicesDetailRow { grid-template-columns: 1fr; gap: 2rem; }
-  .servicesDetailRow.reverse { direction: ltr; }
+  .servicesDetail {
+    padding: 1.5rem;
+  }
+
+  .servicesDetailLabel,
+  .servicesDetailHeading {
+    /* no more position:absolute — they're static and simply stay put now */
+    padding: 0 0.5rem;
+  }
+
+  .servicesDetailHeading {
+    margin: 0.5rem 1 1.5rem 0;
+  }
+
+  .servicesDetailScroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+  }
+
+  .servicesDetailScroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .servicesDetailRow {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    border-top: none;
+    padding: 0;
+  }
+
+  .servicesDetailRow.reverse {
+    direction: ltr;
+  }
 }

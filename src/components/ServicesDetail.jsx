@@ -110,37 +110,39 @@ const ServicesDetail = () => {
         Every Service, <em>Crafted With Care</em>
       </h2>
 
-      {SERVICES.map((service, i) => (
-        <div
-          key={service.number}
-          className={`servicesDetailRow ${service.reverse ? 'reverse' : ''}`}
-          ref={el => rowRefs.current[i] = el}
-        >
-          <img
-            src={service.image}
-            alt={service.name}
-            className="servicesDetailImg"
-          />
+      <div className="servicesDetailScroll">
+        {SERVICES.map((service, i) => (
+          <div
+            key={service.number}
+            className={`servicesDetailRow ${service.reverse ? 'reverse' : ''}`}
+            ref={el => rowRefs.current[i] = el}
+          >
+            <img
+              src={service.image}
+              alt={service.name}
+              className="servicesDetailImg"
+            />
 
-          <div className="servicesDetailText">
-            <span className="servicesDetailNumber">{service.number}</span>
-            <h3 className="servicesDetailName">{service.name}</h3>
-            <p className="servicesDetailDesc">{service.description}</p>
-           <ul className="servicesDetailFeatures">
-  {service.features.map(f => (
-   <li key={f}>
-  <ArrowRight size={13} strokeWidth={1.5} />
-  {f}
-</li>
-  ))}
-</ul>
-            <a href="/contact" className="servicesDetailCta">
-              Get Started →
-            </a>
+            <div className="servicesDetailText">
+              <span className="servicesDetailNumber">{service.number}</span>
+              <h3 className="servicesDetailName">{service.name}</h3>
+              <p className="servicesDetailDesc">{service.description}</p>
+              <ul className="servicesDetailFeatures">
+                {service.features.map(f => (
+                  <li key={f}>
+                    <ArrowRight size={13} strokeWidth={1.5} />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="/contact" className="servicesDetailCta">
+                Get Started →
+              </a>
+            </div>
+
           </div>
-
-        </div>
-      ))}
+        ))}
+      </div>
 
     </section>
   );

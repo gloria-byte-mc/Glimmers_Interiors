@@ -361,3 +361,9 @@
     width: 20px;
   }
 }
+
+@media (max-width: 480px) {
+  .processUrgency {
+    margin-top: 2rem; /* was 7rem — adjust to taste */
+  }
+}

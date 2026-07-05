@@ -205,3 +205,28 @@
   .servicesPricing { padding: 4rem 1.5rem; }
   .servicesPricingGrid { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 480px) {
+  .servicesPricing { padding: 4rem 1.5rem; }
+
+  .servicesPricingGrid {
+    display: flex;
+    grid-template-columns: unset; /* override the grid */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .servicesPricingGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .servicesPricingCard {
+    flex: 0 0 88%; /* main card width — leaves room for next card to peek */
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}

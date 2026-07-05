@@ -108,5 +108,24 @@
 }
 
 @media (max-width: 480px) {
-  .aboutTeamGrid { grid-template-columns: 1fr; }
+  .aboutTeamGrid {
+    display: flex;
+    grid-template-columns: unset; /* override the grid */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .aboutTeamGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .aboutTeamCard {
+    flex: 0 0 100%; /* one card fully visible at a time */
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
 }
